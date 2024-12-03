@@ -1,0 +1,9 @@
+@echo off
+echo Downloading...
+curl -L -o RapidSumo-Build.zip https://github.com/SnowConure/RapidSumo/raw/refs/heads/main/build.zip
+echo Extracting...
+echo Extracting to: %CD%\Game
+PowerShell -Command "Expand-Archive -Path '%CD%\RapidSumo-Build.zip' -DestinationPath '%CD%' -Force"
+del RapidSumo-Build.zip
+echo Relaunching Rapid Sumo...
+start "" "%CD%\Game\Rapid Sumo.exe"
